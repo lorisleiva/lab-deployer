@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3abe8fa9201bbd4158fb28de8a92e8f2",
+    "content-hash": "4060d553fe3b9cbf69ab5cef5a2498af",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -120,11 +120,17 @@
         },
         {
             "name": "deployer/deployer",
-            "version": "dev-artisan-fallback-to-current-dir",
+            "version": "v7.0.0-beta.16",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/deployphp/deployer.git",
+                "reference": "9baa62258530067965cb537088e0ea696620dcf8"
+            },
             "dist": {
-                "type": "path",
-                "url": "../deployer",
-                "reference": "34dade5420fafb606da387547e72cc4b6efd0b36"
+                "type": "zip",
+                "url": "https://api.github.com/repos/deployphp/deployer/zipball/9baa62258530067965cb537088e0ea696620dcf8",
+                "reference": "9baa62258530067965cb537088e0ea696620dcf8",
+                "shasum": ""
             },
             "require": {
                 "marcj/topsort": "^2.0",
@@ -155,29 +161,7 @@
                     "src/functions.php"
                 ]
             },
-            "scripts": {
-                "dep": [
-                    "bin/dep -f deploy.yaml"
-                ],
-                "release": [
-                    "@dep release"
-                ],
-                "test": [
-                    "pest"
-                ],
-                "test:e2e": [
-                    "pest --config tests/e2e/phpunit-e2e.xml"
-                ],
-                "phpcs": [
-                    "phpcs"
-                ],
-                "phpstan": [
-                    "phpstan analyse -c phpstan.neon"
-                ],
-                "phpstan:baseline": [
-                    "@phpstan --generate-baseline tests/phpstan-baseline.neon"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -191,23 +175,20 @@
             "homepage": "https://deployer.org",
             "support": {
                 "docs": "https://deployer.org/docs",
-                "source": "https://github.com/deployphp/deployer",
-                "issues": "https://github.com/deployphp/deployer/issues"
+                "issues": "https://github.com/deployphp/deployer/issues",
+                "source": "https://github.com/deployphp/deployer"
             },
             "funding": [
                 {
-                    "type": "patreon",
-                    "url": "https://patreon.com/deployer"
+                    "url": "https://github.com/sponsors/antonmedv",
+                    "type": "github"
                 },
                 {
-                    "type": "github",
-                    "url": "https://github.com/sponsors/antonmedv"
+                    "url": "https://patreon.com/deployer",
+                    "type": "patreon"
                 }
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "time": "2021-03-15T21:22:42+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -8303,9 +8284,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "deployer/deployer": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
