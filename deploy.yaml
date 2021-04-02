@@ -1,0 +1,26 @@
+import:
+    - recipe/laravel.php
+
+config:
+  application: 'lab-deployer'
+  repository: 'git@github.com:lorisleiva/lab-deployer.git'
+  shared_files:
+    - .env
+  shared_dirs:
+    - uploads
+  writable_dirs:
+    - uploads
+
+hosts:
+  prod:
+    remote_user: ploi
+    hostname: '46.101.5.77'
+    deploy_path: '~/{{application}}.lorisleiva.com'
+
+tasks:
+  build:
+    script:
+      - 'cd {{release_path}} && npm run build'
+
+after:
+  deploy:failed: deploy:unlock
