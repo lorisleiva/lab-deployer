@@ -7,9 +7,7 @@ config:
   shared_files:
     - .env
   shared_dirs:
-    - uploads
-  writable_dirs:
-    - uploads
+    - storage
 
 hosts:
   prod:
@@ -18,6 +16,13 @@ hosts:
     deploy_path: '~/{{application}}.lorisleiva.com'
 
 tasks:
+  deploy:
+    - deploy:prepare
+    - deploy:vendors
+    - artisan:storage:link
+    - artisan:view:cache
+    - artisan:config:cache
+    - deploy:publish
   build:
     script:
       - 'cd {{release_path}} && npm run build'
