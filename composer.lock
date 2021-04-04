@@ -120,16 +120,16 @@
         },
         {
             "name": "deployer/deployer",
-            "version": "v7.0.0-beta.16",
+            "version": "v7.0.0-beta.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/deployphp/deployer.git",
-                "reference": "9baa62258530067965cb537088e0ea696620dcf8"
+                "reference": "d583506f907b35c4a322cefd6d19667f80e74780"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/deployphp/deployer/zipball/9baa62258530067965cb537088e0ea696620dcf8",
-                "reference": "9baa62258530067965cb537088e0ea696620dcf8",
+                "url": "https://api.github.com/repos/deployphp/deployer/zipball/d583506f907b35c4a322cefd6d19667f80e74780",
+                "reference": "d583506f907b35c4a322cefd6d19667f80e74780",
                 "shasum": ""
             },
             "require": {
@@ -188,7 +188,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-03-15T21:22:42+00:00"
+            "time": "2021-04-04T17:14:04+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",

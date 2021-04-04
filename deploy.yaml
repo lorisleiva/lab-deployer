@@ -1,13 +1,12 @@
 import:
     - recipe/laravel.php
+    - contrib/php-fpm.php
+    - contrib/npm.php
 
 config:
   application: 'lab-deployer'
   repository: 'git@github.com:lorisleiva/lab-deployer.git'
-  shared_files:
-    - .env
-  shared_dirs:
-    - storage
+  php_fpm_version: 7.4
 
 hosts:
   prod:
@@ -22,10 +21,12 @@ tasks:
     - artisan:storage:link
     - artisan:view:cache
     - artisan:config:cache
+    - npm:install
+    - npm:run:prod
     - deploy:publish
-  build:
+  npm:run:prod:
     script:
-      - 'cd {{release_path}} && npm run build'
+      - 'cd {{release_path}} && npm run prod'
 
 after:
   deploy:failed: deploy:unlock
